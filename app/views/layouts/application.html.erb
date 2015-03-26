@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workout</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Workout</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="header">
+		<h1>Fitness Tracker</h1>
+		<ul>
+			<% if current_user %>
+			<li><a href="http://localhost:9393/users/<%= current_user.id%>">My Profile</li></a>
+			<li><a href="http://localhost:9393/#######">Browse Exercises</a></li>
+			<li><a href="http://localhost:9393/#######">Workout Plans</a></li>
+			<li><a href="http://localhost:9393/#######">Workout Meetup</a></li>
+			<li><a href="http://localhost:9393/logout"> <input class="login_button" type="submit" value="Log Out"></a></li>
+			<% else %>
+			<li><a href="http://localhost:9393/login"> <input class="login_button" type="submit" value="Sign In"></a></li>
+			<%end %>
+		</ul>
+	</div>    
+	<%= yield %>
 </body>
 </html>
