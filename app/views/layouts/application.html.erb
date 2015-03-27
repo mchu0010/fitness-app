@@ -12,7 +12,7 @@
 		<ul>
 			<% if current_user %>
 			<!-- <li><a href="http://localhost:3000/users/<%#= current_user.id%>">My Profile</li></a> -->
-			<li><%= link_to "My Summary", user_path(current_user.id) %></li> 
+			<li><%= link_to "My Summary", summary_path %></li> 
 
 			<!-- <li><a href="http://localhost:3000/#######">Browse Exercises</a></li> -->
 			<li><%= link_to "Browse Exercises", "#" %>
