@@ -3655,3 +3655,113 @@ Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (0.0ms)
   [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
 Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-03-27 15:19:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 1247ms (Views: 1237.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application-adc3b80c4b0e58f137fa56fb5b49ecc2.css?body=1" for ::1 at 2015-03-27 15:19:16 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-27 15:19:16 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-27 15:19:16 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-27 15:19:16 -0500
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for ::1 at 2015-03-27 15:19:16 -0500
+
+
+Started GET "/login" for ::1 at 2015-03-27 15:19:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (55.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 82ms (Views: 80.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2015-03-27 15:19:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vzXG1nKGYI+RGdIPEQvktnEvAmo6UvRJlA4PPE4gqLcV/ToxRs2oPEdP7pnJCrRucRnNfQxZxpN7XhY/ZCr0IA==", "session"=>{"email"=>"test2@test.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "test2@test.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for ::1 at 2015-03-27 15:19:32 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (54.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 90ms (Views: 78.9ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2015-03-27 15:19:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2/qTrgELxZAMy9sOZB875PrCvmg+1u7Ht+jXuQ7e1nVxMm9JNUANI9qd55i8Hms8+vRxfwjd3B1YuM66JNSK4g==", "user"=>{"username"=>"", "first_name"=>"", "last_name"=>"", "email"=>"mike@gmail.com", "password"=>"[FILTERED]", "image_url"=>""}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mike@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_hash", "email", "first_name", "last_name", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", ""], ["password_hash", "$2a$10$loBlo.9banZpwLghEK6.uuVU6O4Y1NuaPtaXXIE9tNAl6M6F6z6oa"], ["email", "mike@gmail.com"], ["first_name", ""], ["last_name", ""], ["image_url", ""]]
+  [1m[35m (6.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/workouts
+Completed 302 Found in 96ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/workouts" for ::1 at 2015-03-27 15:19:45 -0500
+Processing by WorkoutsController#index as HTML
+  Rendered workouts/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 77ms
+
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007fda0bcb9458>:0x007fda0bcc0898>):
+    12: 		<ul>
+    13: 			<% if current_user %>
+    14: 			<!-- <li><a href="http://localhost:3000/users/<%#= current_user.id%>">My Profile</li></a> -->
+    15: 			<li><%= link_to "My Summary", user_path(user.id) %></li> 
+    16: 
+    17: 			<!-- <li><a href="http://localhost:3000/#######">Browse Exercises</a></li> -->
+    18: 			<li><%= link_to "Browse Exercises", "#" %>
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___2401166458680663885_70287230164300'
+
+
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.0.0-p598/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (45.0ms)
+
+
+Started GET "/workouts" for ::1 at 2015-03-27 15:22:57 -0500
+Processing by WorkoutsController#index as HTML
+  Rendered workouts/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 200 OK in 83ms (Views: 80.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application-adc3b80c4b0e58f137fa56fb5b49ecc2.css?body=1" for ::1 at 2015-03-27 15:22:57 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-27 15:22:57 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-27 15:22:57 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-27 15:22:57 -0500
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for ::1 at 2015-03-27 15:22:57 -0500
