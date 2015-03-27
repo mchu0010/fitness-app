@@ -1,32 +1,41 @@
+arms = MuscleGroup.create(name: "Arms")
+legs = MuscleGroup.create(name: "Legs")
+chest = MuscleGroup.create(name: "Back")
+abdominals = MuscleGroup.create(name: "Abdominals")
+back = MuscleGroup.create(name: "Back")
+shoulders = MuscleGroup.create(name: "Shoulders")
+
+#-----------------------
+
 cardio = Exercise.create(name: "Stair Master",
-                         category: "cardio",
+                         musclegroup: legs,
                          description: "get cut bro",
                          machine: "stair master",
                          primary_muscle: "legs")
 
 chest = Exercise.create(name: "Barbell Bench Press",
-                        category: "chest",
+                        musclegroup: chest,
                         description: "get buff bro",
                         machine: "bench press",
                         primary_muscle: "chest",
                         secondary_muscle: "triceps")
 
 biceps = Exercise.create(name: "Dumbbell Bicep Curls",
-                         category: "arms",
+                         musclegroup: arms,
                          description: "get buff bro",
                          machine: "dumbbells",
                          primary_muscle: "biceps",
                          secondary_muscle: "forearms")
 
 squats = Exercise.create(name: "Barbell Squat",
-                         category: "legs",
+                         musclegroup: legs,
                          description: "get buff bro",
                          machine: "squat rack",
                          primary_muscle: "quadriceps",
                          secondary_muscle: "glutes")
 
 shoulders = Exercise.create(name: "Arnold Dumbbell Press",
-                            category: "shoulders",
+                            musclegroup: shoulders,
                             description: "get buff bro",
                             machine: "dumbbells",
                             primary_muscle: "shoulders",
