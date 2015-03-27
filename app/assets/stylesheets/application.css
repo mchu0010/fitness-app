@@ -39,6 +39,7 @@ body{
 
 .header ul li {
   float: right;
+  margin-left: 5px;
 }
 
 .header * a {
