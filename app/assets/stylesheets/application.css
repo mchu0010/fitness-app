@@ -25,6 +25,27 @@ body{
     margin:0px auto;
 }
 
+.header > * {
+  display: inline-block;
+  color: white;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header ul li {
+  float: right;
+}
+
+.header * a {
+  color: white;
+  text-decoration: none;
+}
+
 #site-title {
   margin-left: 10%;
   font-family: 'Cantarell', sans-serif;
@@ -56,3 +77,4 @@ body{
   font-size: 25px;
   font-family: sans-serif;
 }
+
