@@ -1,3 +1,4 @@
-<button type="button">New Daily Workout</button>
-<button type="button">Start Workout Program</button>
-<button type="button">Back</button>
+<%= button_to "New Daily Workout", workouts_path, {action: "create"} %>
+
+<%= button_to "Start Workout Program", workout_programs_path, :method => "get" %>
+<%= button_to "Back", workouts_path, :method => "get" %>
