@@ -1,3 +1,4 @@
+# Muscle Group -------------------------------------
 arms = MuscleGroup.create(name: "Arms")
 legs = MuscleGroup.create(name: "Legs")
 chest = MuscleGroup.create(name: "Back")
@@ -5,13 +6,32 @@ abdominals = MuscleGroup.create(name: "Abdominals")
 back = MuscleGroup.create(name: "Back")
 shoulders = MuscleGroup.create(name: "Shoulders")
 
-#-----------------------
+# Primary Muscle ------------------------------------
+biceps = Muscle.create(name: "Biceps")
+triceps = Muscle.create(name: "Triceps")
+forearms = Muscle.create
+
+hamstrings = Muscle.create(name: "Hamstrings")
+quadriceps = Muscle.create(name: "Quadriceps")
+calves = Muscle.create(name: "Calves")
+glutes = Muscle.create(name: "Glutes")
+
+traps = Muscle.create(name: "Traps")
+lats = Muscle.create(name: "Lats")
+back = Muscle.create(name: "Back") 
+
+chest = Muscle.create(name: "Chest")
+abdominals = Muscle.create(name: "Abdominals")
+
+
 
 cardio = Exercise.create(name: "Stair Master",
                          musclegroup: legs,
                          description: "get cut bro",
                          machine: "stair master",
-                         primary_muscle: "legs")
+                         primary_muscle: calves
+                         )
+                         
 
 chest = Exercise.create(name: "Barbell Bench Press",
                         musclegroup: chest,
