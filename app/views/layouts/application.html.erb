@@ -11,13 +11,13 @@
 		<h1>Fitness Tracker</h1>
 		<ul>
 			<% if current_user %>
-			<li><a href="http://localhost:9393/users/<%= current_user.id%>">My Profile</li></a>
-			<li><a href="http://localhost:9393/#######">Browse Exercises</a></li>
-			<li><a href="http://localhost:9393/#######">Workout Plans</a></li>
-			<li><a href="http://localhost:9393/#######">Workout Meetup</a></li>
-			<li><a href="http://localhost:9393/logout"> <input class="login_button" type="submit" value="Log Out"></a></li>
+			<li><a href="http://localhost:3000/users/<%= current_user.id%>">My Profile</li></a>
+			<li><a href="http://localhost:3000/#######">Browse Exercises</a></li>
+			<li><a href="http://localhost:3000/#######">Workout Plans</a></li>
+			<li><a href="http://localhost:3000/#######">Workout Meetup</a></li>
+			<li><a href="http://localhost:3000/logout"> <input class="login_button" type="submit" value="Log Out"></a></li>
 			<% else %>
-			<li><a href="http://localhost:9393/login"> <input class="login_button" type="submit" value="Sign In"></a></li>
+			<li><a href="http://localhost:3000/login"> <input class="login_button" type="submit" value="Sign In"></a></li>
 			<%end %>
 		</ul>
 	</div>    
