@@ -1,5 +1,5 @@
-<button type="button">New Workout</button>
-<% if @user.workout_programs %>
+<%= button_to "New Workout", new_workout_path, :method => "get" %>
+<% if current_user.workout_programs.count >= 1 %>
 <button type="button">Continue Workout Program</button>
 <% end %>
 <button type="button">Summary</button>

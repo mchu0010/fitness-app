@@ -1,8 +1,7 @@
 class WorkoutsController < ApplicationController
   def index
-    @user = current_user
     if logged_in?
-      render :'workout/index'
+      render :index
     else
       redirect_to root_path
     end
