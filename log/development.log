@@ -2110,3 +2110,282 @@ Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for
 
 
 Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-26 14:40:15 -0500
+  [1m[36m (53.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (48.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (56.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (55.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDailyWorkouts (20150326173124)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (83.4ms)[0m  [1mCREATE TABLE "daily_workouts" ("id" serial primary key, "week" character varying, "day" character varying, "workout_program_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173124"]]
+  [1m[36m (16.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateExercises (20150326173138)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (78.8ms)[0m  [1mCREATE TABLE "exercises" ("id" serial primary key, "name" character varying, "category" character varying, "description" text, "machine" character varying, "primary_muscle" character varying, "secondary_muscle" character varying, "image" character varying, "video_link" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173138"]]
+  [1m[36m (12.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateExerciseActivities (20150326173150)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (69.0ms)[0m  [1mCREATE TABLE "exercise_activities" ("id" serial primary key, "distance" character varying, "reps" character varying, "sets" character varying, "exercise_id" integer, "exercise_recommendation_id" integer, "workout_session_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173150"]]
+  [1m[36m (12.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateExerciseRecommendations (20150326173200)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (89.9ms)[0m  [1mCREATE TABLE "exercise_recommendations" ("id" serial primary key, "distance" character varying, "reps" character varying, "sets" character varying, "rest" character varying, "exercise_id" integer, "daily_workout_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173200"]]
+  [1m[36m (10.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGalleries (20150326173212)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (87.3ms)[0m  [1mCREATE TABLE "galleries" ("id" serial primary key, "name" character varying, "description" text, "image_url" text, "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173212"]]
+  [1m[36m (9.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMeetups (20150326173218)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (79.9ms)[0m  [1mCREATE TABLE "meetups" ("id" serial primary key, "location" character varying, "description" text, "tags" character varying, "creator" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173218"]]
+  [1m[36m (9.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRelationships (20150326173324)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (46.4ms)[0m  [1mCREATE TABLE "relationships" ("id" serial primary key, "first_user_id" integer, "second_user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173324"]]
+  [1m[36m (8.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20150326173336)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (74.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "username" character varying, "email" character varying, "password_hash" character varying, "image_url" text) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173336"]]
+  [1m[36m (16.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateWeightGoals (20150326173347)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (43.3ms)[0m  [1mCREATE TABLE "weight_goals" ("id" serial primary key, "current_weight" integer, "target_weight" integer, "participant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173347"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateWorkoutPrograms (20150326173409)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (72.9ms)[0m  [1mCREATE TABLE "workout_programs" ("id" serial primary key, "name" character varying, "description" text, "difficulty" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173409"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateWorkoutSessions (20150326173416)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (34.6ms)[0m  [1mCREATE TABLE "workout_sessions" ("id" serial primary key, "participant_id" integer, "meetup_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150326173416"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'daily_workouts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'exercise_activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'exercise_recommendations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'exercises'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'galleries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'meetups'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'relationships'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'weight_goals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'workout_programs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'workout_sessions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "exercises" ("name", "category", "description", "machine", "primary_muscle", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Stair Master"], ["category", "cardio"], ["description", "get cut bro"], ["machine", "stair master"], ["primary_muscle", "legs"], ["created_at", "2015-03-27 19:01:59.196772"], ["updated_at", "2015-03-27 19:01:59.196772"]]
+  [1m[35m (11.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "exercises" ("name", "category", "description", "machine", "primary_muscle", "secondary_muscle", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Barbell Bench Press"], ["category", "chest"], ["description", "get buff bro"], ["machine", "bench press"], ["primary_muscle", "chest"], ["secondary_muscle", "triceps"], ["created_at", "2015-03-27 19:01:59.216737"], ["updated_at", "2015-03-27 19:01:59.216737"]]
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "exercises" ("name", "category", "description", "machine", "primary_muscle", "secondary_muscle", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dumbbell Bicep Curls"], ["category", "arms"], ["description", "get buff bro"], ["machine", "dumbbells"], ["primary_muscle", "biceps"], ["secondary_muscle", "forearms"], ["created_at", "2015-03-27 19:01:59.232893"], ["updated_at", "2015-03-27 19:01:59.232893"]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "exercises" ("name", "category", "description", "machine", "primary_muscle", "secondary_muscle", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Barbell Squat"], ["category", "legs"], ["description", "get buff bro"], ["machine", "squat rack"], ["primary_muscle", "quadriceps"], ["secondary_muscle", "glutes"], ["created_at", "2015-03-27 19:01:59.241117"], ["updated_at", "2015-03-27 19:01:59.241117"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "exercises" ("name", "category", "description", "machine", "primary_muscle", "secondary_muscle", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Arnold Dumbbell Press"], ["category", "shoulders"], ["description", "get buff bro"], ["machine", "dumbbells"], ["primary_muscle", "shoulders"], ["secondary_muscle", "triceps"], ["created_at", "2015-03-27 19:01:59.249329"], ["updated_at", "2015-03-27 19:01:59.249329"]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'brian@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "password_hash", "email", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Brian"], ["last_name", "Sheridan"], ["password_hash", "$2a$10$dvaJnZjL/Blr.jo2wqnw1utVGsyqmAnGsdEJ/egFADUZPPDvJF2Ru"], ["email", "brian@gmail.com"], ["image_url", "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/778638_547388268615871_853443307_o.jpg"]]
+  [1m[35m (14.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "workout_sessions" ("participant_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["participant_id", 1], ["created_at", "2015-03-27 19:01:59.504185"], ["updated_at", "2015-03-27 19:01:59.504185"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "exercise_activities" ("workout_session_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["workout_session_id", 1], ["exercise_id", 2], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.542863"], ["updated_at", "2015-03-27 19:01:59.542863"]]
+  [1m[35m (18.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "exercise_activities" ("workout_session_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["workout_session_id", 1], ["exercise_id", 3], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.565559"], ["updated_at", "2015-03-27 19:01:59.565559"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "exercise_activities" ("workout_session_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["workout_session_id", 1], ["exercise_id", 4], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.573844"], ["updated_at", "2015-03-27 19:01:59.573844"]]
+  [1m[35m (4.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "exercise_activities" ("workout_session_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["workout_session_id", 1], ["exercise_id", 5], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.581991"], ["updated_at", "2015-03-27 19:01:59.581991"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aaron@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "password_hash", "email", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Aaron"], ["last_name", "Harris"], ["password_hash", "$2a$10$IG5vcIrnPDtt2GhwIkWFY.4KufptaKUG5V8BaPrhououO2yHCpKnK"], ["email", "aaron@gmail.com"], ["image_url", "https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1933877_730472939440_3471551_n.jpg?oh=deb8e6c08ada482d5b101d581ae875a9&oe=558433B6"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "workout_sessions" ("participant_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["participant_id", 2], ["created_at", "2015-03-27 19:01:59.681423"], ["updated_at", "2015-03-27 19:01:59.681423"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "workout_programs" ("name", "description", "difficulty", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "T70x"], ["description", "SWOLLLL in 70 days"], ["difficulty", "extreme"], ["created_at", "2015-03-27 19:01:59.708282"], ["updated_at", "2015-03-27 19:01:59.708282"]]
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "daily_workouts" ("week", "day", "workout_program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["week", "1"], ["day", "Monday"], ["workout_program_id", 1], ["created_at", "2015-03-27 19:01:59.742905"], ["updated_at", "2015-03-27 19:01:59.742905"]]
+  [1m[35m (18.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "exercise_recommendations" ("distance", "exercise_id", "daily_workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["distance", "1"], ["exercise_id", 1], ["daily_workout_id", 1], ["created_at", "2015-03-27 19:01:59.773138"], ["updated_at", "2015-03-27 19:01:59.773138"]]
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "exercise_recommendations" ("sets", "reps", "rest", "exercise_id", "daily_workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sets", "5"], ["reps", "10"], ["rest", "2"], ["exercise_id", 2], ["daily_workout_id", 1], ["created_at", "2015-03-27 19:01:59.781045"], ["updated_at", "2015-03-27 19:01:59.781045"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "exercise_recommendations" ("sets", "reps", "rest", "exercise_id", "daily_workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["sets", "5"], ["reps", "10"], ["rest", "2"], ["exercise_id", 3], ["daily_workout_id", 1], ["created_at", "2015-03-27 19:01:59.789306"], ["updated_at", "2015-03-27 19:01:59.789306"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "exercise_recommendations" ("sets", "reps", "rest", "exercise_id", "daily_workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sets", "5"], ["reps", "10"], ["rest", "2"], ["exercise_id", 4], ["daily_workout_id", 1], ["created_at", "2015-03-27 19:01:59.797631"], ["updated_at", "2015-03-27 19:01:59.797631"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "exercise_recommendations" ("sets", "reps", "rest", "exercise_id", "daily_workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["sets", "5"], ["reps", "10"], ["rest", "2"], ["exercise_id", 5], ["daily_workout_id", 1], ["created_at", "2015-03-27 19:01:59.805980"], ["updated_at", "2015-03-27 19:01:59.805980"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "exercise_activities" ("workout_session_id", "exercise_recommendation_id", "exercise_id", "distance", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["workout_session_id", 2], ["exercise_recommendation_id", 5], ["exercise_id", 1], ["distance", "1"], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.815099"], ["updated_at", "2015-03-27 19:01:59.815099"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "exercise_activities" ("workout_session_id", "exercise_recommendation_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["workout_session_id", 2], ["exercise_recommendation_id", 5], ["exercise_id", 2], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.822942"], ["updated_at", "2015-03-27 19:01:59.822942"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "exercise_activities" ("workout_session_id", "exercise_recommendation_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["workout_session_id", 2], ["exercise_recommendation_id", 5], ["exercise_id", 3], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.831252"], ["updated_at", "2015-03-27 19:01:59.831252"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "exercise_activities" ("workout_session_id", "exercise_recommendation_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["workout_session_id", 2], ["exercise_recommendation_id", 5], ["exercise_id", 4], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.839535"], ["updated_at", "2015-03-27 19:01:59.839535"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "exercise_activities" ("workout_session_id", "exercise_recommendation_id", "exercise_id", "sets", "reps", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["workout_session_id", 2], ["exercise_recommendation_id", 5], ["exercise_id", 5], ["sets", "5"], ["reps", "10"], ["created_at", "2015-03-27 19:01:59.847989"], ["updated_at", "2015-03-27 19:01:59.847989"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWorkoutProgram Load (0.7ms)[0m  SELECT "workout_programs".* FROM "workout_programs" INNER JOIN "daily_workouts" ON "workout_programs"."id" = "daily_workouts"."workout_program_id" INNER JOIN "exercise_recommendations" ON "daily_workouts"."id" = "exercise_recommendations"."daily_workout_id" INNER JOIN "exercise_activities" ON "exercise_recommendations"."id" = "exercise_activities"."exercise_recommendation_id" INNER JOIN "workout_sessions" ON "exercise_activities"."workout_session_id" = "workout_sessions"."id" WHERE "workout_sessions"."participant_id" = $1  [["participant_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWorkoutProgram Load (0.7ms)[0m  SELECT "workout_programs".* FROM "workout_programs" INNER JOIN "daily_workouts" ON "workout_programs"."id" = "daily_workouts"."workout_program_id" INNER JOIN "exercise_recommendations" ON "daily_workouts"."id" = "exercise_recommendations"."daily_workout_id" INNER JOIN "exercise_activities" ON "exercise_recommendations"."id" = "exercise_activities"."exercise_recommendation_id" INNER JOIN "workout_sessions" ON "exercise_activities"."workout_session_id" = "workout_sessions"."id" WHERE "workout_sessions"."participant_id" = $1  [["participant_id", 1]]
+  [1m[36mWorkoutProgram Load (0.7ms)[0m  [1mSELECT "workout_programs".* FROM "workout_programs"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
