@@ -1,0 +1,28 @@
+<h1><%= @workout_program.name %></h1>
+
+<h3>Overview</h3>
+<div>
+	<%= @workout_program.description %>
+</div>
+
+<div>
+	<%= @workout_program.difficulty %>
+</div>
+
+<h3>Schedule Preview</h3>
+	<% @schedule.each do |schedule| %>
+	Week <%= schedule.week %>
+	<ul>
+		<li><%= schedule.day %></li>
+		<ul>
+		<% @exercise.each do |exercise| %>
+		<b><%= exercise.exercise.name %></b>
+			<li>Reps: <%= exercise.reps %></li>
+			<li>Sets: <%= exercise.sets %></li>
+			<li>Rest: <%= exercise.rest %></li>
+		<% end %>
+		</ul>
+	</ul>
+<% end %>
+
+<%= link_to "Back", workout_programs_path %>

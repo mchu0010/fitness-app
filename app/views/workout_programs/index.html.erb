@@ -1,5 +1,7 @@
 List of Workout Programs will go here
 
-<% current_user.workout_programs.each do |program| %>
-	<%= program.name %>
+<ul>
+<% @workout_programs.each do |program| %>
+	<%= button_to program.name, workout_program_path(program.id), :method => "get" %>
 <% end %>
+</ul>
