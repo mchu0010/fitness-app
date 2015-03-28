@@ -211,6 +211,7 @@ aaron = User.create!(first_name: "Aaron",
 workout_session2 = WorkoutSession.create(participant: aaron)
 
 t70x = WorkoutProgram.create(name: "T70x", description: "SWOLLLL in 70 days", difficulty: "extreme")
+aarons_workout_program = UserWorkoutProgram.create!(user: aaron, workout_program: t70x)
 
 week1_monday = DailyWorkout.create(week: 1, day: "Monday", workout_program: t70x)
 
