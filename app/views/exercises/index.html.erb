@@ -1,0 +1,6 @@
+Index
+
+
+<% @exercises.each do |exercise| %>
+	<h1><%= link_to exercise.name, exercise_path(exercise.id) %></h1>
+<% end %>

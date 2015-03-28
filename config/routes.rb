@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :workouts
   resources :workout_programs, only: [:index, :show]
   resources :workout_sessions
+  resources :exercises, only: [:index, :show]
 
   get  "/login"  => 'sessions#new'
   post "/login"  => 'sessions#create'
