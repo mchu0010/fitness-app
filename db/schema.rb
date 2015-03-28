@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326173416) do
+ActiveRecord::Schema.define(version: 20150327234409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150326173416) do
     t.string   "name"
     t.string   "category"
     t.text     "description"
-    t.string   "machine"
+    t.string   "equipment"
     t.string   "primary_muscle"
     t.string   "secondary_muscle"
     t.string   "image"
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 20150326173416) do
     t.integer  "creator"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "muscles", force: :cascade do |t|
+    t.string "name"
+    t.string "muscle_group"
   end
 
   create_table "relationships", force: :cascade do |t|

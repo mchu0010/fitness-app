@@ -1,65 +1,79 @@
 # Muscle Group -------------------------------------
-arms = MuscleGroup.create(name: "Arms")
-legs = MuscleGroup.create(name: "Legs")
-chest = MuscleGroup.create(name: "Back")
-abdominals = MuscleGroup.create(name: "Abdominals")
-back = MuscleGroup.create(name: "Back")
-shoulders = MuscleGroup.create(name: "Shoulders")
+# arms = MuscleGroup.create(name: "Arms")
+# legs = MuscleGroup.create(name: "Legs")
+# chest = MuscleGroup.create(name: "Back")
+# abdominals = MuscleGroup.create(name: "Abdominals")
+# back = MuscleGroup.create(name: "Back")
+# shoulders = MuscleGroup.create(name: "Shoulders")
 
-# Primary Muscle ------------------------------------
-biceps = Muscle.create(name: "Biceps")
-triceps = Muscle.create(name: "Triceps")
-forearms = Muscle.create
-
-hamstrings = Muscle.create(name: "Hamstrings")
-quadriceps = Muscle.create(name: "Quadriceps")
-calves = Muscle.create(name: "Calves")
-glutes = Muscle.create(name: "Glutes")
-
-traps = Muscle.create(name: "Traps")
-lats = Muscle.create(name: "Lats")
-back = Muscle.create(name: "Back") 
-
-chest = Muscle.create(name: "Chest")
-abdominals = Muscle.create(name: "Abdominals")
-
-
-
-cardio = Exercise.create(name: "Stair Master",
-                         musclegroup: legs,
+cardio1 = Exercise.create(name: "Stair Master",
                          description: "get cut bro",
-                         machine: "stair master",
-                         primary_muscle: calves
+                         equipment: "stair master",
+                         primary_muscle: calves,
+                         secondary_muscle: legs
                          )
                          
 
-chest = Exercise.create(name: "Barbell Bench Press",
-                        musclegroup: chest,
+
+# Primary Muscle ------------------------------------
+chest = Muscle.create(name: "Chest", muscle_group: "Chest")
+abdominals = Muscle.create(name: "Abdominals", muscle_group: "Abdominals")
+
+biceps = Muscle.create(name: "Biceps", muscle_group: "Arms")
+triceps = Muscle.create(name: "Triceps", muscle_group: "Arms")
+forearms = Muscle.create(name: "Forearms", muscle_group: "Arms")
+
+shoulders = Muscle.create(name: "Shoulders", muscle_group: "Shoulders")
+
+hamstrings = Muscle.create(name: "Hamstrings", muscle_group: "Legs")
+quadriceps = Muscle.create(name: "Quadriceps", muscle_group: "Legs")
+calves = Muscle.create(name: "Calves", muscle_group: "Legs")
+glutes = Muscle.create(name: "Glutes", muscle_group: "Legs")
+
+traps = Muscle.create(name: "Traps", muscle_group: "Back")
+lats = Muscle.create(name: "Lats", muscle_group: "Back")
+back = Muscle.create(name: "Back", muscle_group: "Back") 
+
+
+# Exercises -----------------------------------------
+
+cardio1 = Exercise.create(name: "Stair Master",
+                         description: "get cut bro",
+                         equipment: "stair master",
+                         primary_muscle: calves,
+                         secondary_muscle: legs
+                         )
+                         
+
+chest1 = Exercise.create(name: "Barbell Bench Press",
                         description: "get buff bro",
-                        machine: "bench press",
-                        primary_muscle: "chest",
-                        secondary_muscle: "triceps")
+                        equipment: "Flat Bench & Barbell",
+                        primary_muscle: chest,
+                        secondary_muscle: triceps)
 
-biceps = Exercise.create(name: "Dumbbell Bicep Curls",
-                         musclegroup: arms,
+chest2 = Exercise.create(name: "Barbell Incline Bench Press",
+                        description: "get buff bro",
+                        equipment: "Incline Bench & Barbell",
+                        primary_muscle: chest,
+                        secondary_muscle: triceps)
+
+biceps1 = Exercise.create(name: "Dumbbell Bicep Curls",
                          description: "get buff bro",
-                         machine: "dumbbells",
-                         primary_muscle: "biceps",
-                         secondary_muscle: "forearms")
+                         equipment: "dumbbells",
+                         primary_muscle: biceps,
+                         secondary_muscle: forearms)
 
-squats = Exercise.create(name: "Barbell Squat",
-                         musclegroup: legs,
+squats1 = Exercise.create(name: "Barbell Squat",
                          description: "get buff bro",
-                         machine: "squat rack",
-                         primary_muscle: "quadriceps",
-                         secondary_muscle: "glutes")
+                         equipment: "squat rack",
+                         primary_muscle: quadriceps,
+                         secondary_muscle: glutes)
 
-shoulders = Exercise.create(name: "Arnold Dumbbell Press",
-                            musclegroup: shoulders,
+shoulders1 = Exercise.create(name: "Arnold Dumbbell Press",
                             description: "get buff bro",
-                            machine: "dumbbells",
-                            primary_muscle: "shoulders",
-                            secondary_muscle: "triceps")
+                            equipment: "dumbbells",
+                            primary_muscle: shoulders,
+                            secondary_muscle: triceps)
 
 
 #------------------------------------------------------------------------------------------------------------------------

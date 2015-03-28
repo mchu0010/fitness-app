@@ -6,4 +6,6 @@ class Exercise < ActiveRecord::Base
   has_many :exercise_recommendations
   has_many :daily_workouts, through: :exercise_recommendations
   has_many :workout_programs, through: :daily_workouts
+
+  belongs_to :muscle
 end
