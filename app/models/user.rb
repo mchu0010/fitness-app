@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :exercise_recommendations, through: :exercise_activities
   has_many :daily_workouts, through: :exercise_recommendations
-  has_many :workout_programs, through: :daily_workouts
+  has_many :workout_programs, -> { uniq }, through: :daily_workouts
 
 
 
