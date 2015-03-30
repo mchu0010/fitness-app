@@ -1,3 +1,7 @@
 <h1><%= @exercise.name %></h1>
 
+<div class="exercise-i nfo">
+<h3>Machine: </h3> <%= @exercise.equipment %>
+<h3>Primary Muscle: </h3> <%= @exercise.muscle.name %>
 <p><%= @exercise.description %></p>
+</div>
