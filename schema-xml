@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="982" y="216" name="exercises">
+</datatypes><table x="1216" y="214" name="exercises">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -56,7 +56,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1169" y="254" name="muscle">
+<table x="1393" y="243" name="muscle">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -70,7 +70,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="411" y="130" name="exercise_activities">
+<table x="665" y="123" name="exercise_activities">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -99,7 +99,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="189" y="179" name="workout_sessions">
+<table x="424" y="207" name="workout_sessions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -115,7 +115,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="32" y="107" name="meetups">
+<table x="259" y="98" name="meetups">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -135,7 +135,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="30" y="271" name="users">
+<table x="265" y="275" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -161,10 +161,14 @@
 <part>id</part>
 </key>
 </table>
-<table x="677.3333442829276" y="267.5555564974561" name="exercise_recommendations">
+<table x="928" y="274" name="exercise_recommendations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="exercise_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="exercises" row="id" />
+</row>
 <row name="distance" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -177,10 +181,6 @@
 <row name="rest" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="exercise_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="exercises" row="id" />
-</row>
 <row name="daily_work_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="daily_workout" row="id" />
@@ -189,7 +189,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="452.33334428292756" y="394.5555564974561" name="daily_workout">
+<table x="717" y="411" name="daily_workout">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -207,7 +207,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="214.3333442829276" y="457.5555564974561" name="workout_programs">
+<table x="481" y="430" name="workout_programs">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -220,6 +220,61 @@
 <row name="difficulty" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="41" y="92" name="weight_goals">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="current_weight" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="target_weight" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="participant_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="58" y="277" name="galleries">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="description" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="image_url" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="owner_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="51" y="483" name="relationships">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="first_friend_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="second_friend_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
