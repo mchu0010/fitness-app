@@ -1,6 +1,7 @@
 class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.all
+    @muscles = Muscle.all
 
     if logged_in?
       render :index
