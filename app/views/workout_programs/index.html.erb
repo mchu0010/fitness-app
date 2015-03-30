@@ -1,3 +1,5 @@
 List of Workout Programs will go here
 
-<%= current_user.workout_programs.first.name %>
+<% current_user.workout_programs.each do |program| %>
+	<%= program.name %>
+<% end %>
