@@ -1,3 +1,4 @@
+# MUSCLES --------------------------------------------------------
 
 chest = Muscle.create(name: "Chest", muscle_group: "Chest")
 abdominals = Muscle.create(name: "Abdominals", muscle_group: "Abdominals")
@@ -18,13 +19,14 @@ lats = Muscle.create(name: "Lats", muscle_group: "Back")
 back = Muscle.create(name: "Back", muscle_group: "Back") 
 
 
-# # Exercises -----------------------------------------
+# EXERCISES --------------------------------------------------------
 
+# Cardio
 cardio1 = Exercise.create!(name: "Stair Master",
                          description: "get cut bro",
-                         equipment: "stair master"
-                         )
-                         
+                         equipment: "stair master")
+# Chest Exercises 
+# image - http://assets.bodybuilding.com/images/trackers/exercise/heatmap/1.gif                        
 chest1 = Exercise.create(name: "Barbell Bench Press",
                         description: "get buff bro",
                         equipment: "Flat Bench & Barbell",
@@ -35,12 +37,110 @@ chest2 = Exercise.create(name: "Barbell Incline Bench Press",
                         equipment: "Incline Bench & Barbell",
                         muscle: chest)
 
+chest3 = Exercise.create(name: "Barbell Decline Bench Press",
+                        description: "get buff bro",
+                        equipment: "Decline Bench & Barbell",
+                        muscle: chest)
+
+chest4 = Exercise.create(name: "Dumbbell Bench Press",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest5 = Exercise.create(name: "Incline Dumbbell Press",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest6 = Exercise.create(name: "Decline Dumbbell Press",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest7 = Exercise.create(name: "Dumbbell Flyes",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest8 = Exercise.create(name: "Incline Dumbbell Flyes",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest9 = Exercise.create(name: "Decline Dumbbell Flyes",
+                        description: "get buff bro",
+                        equipment: "Dumbbell",
+                        muscle: chest)
+
+chest10 = Exercise.create(name: "Incline Cable Flyes",
+                        description: "get buff bro",
+                        equipment: "Cable",
+                        muscle: chest)
+
+chest11 = Exercise.create(name: "Pushups",
+                        description: "get buff bro",
+                        equipment: "Body Only",
+                        muscle: chest)
+
+chest12 = Exercise.create(name: "Dips - Chest Version",
+                        description: "get buff bro",
+                        equipment: "Other",
+                        muscle: chest)
+
+
+# Bicep Exercises
 biceps1 = Exercise.create(name: "Dumbbell Bicep Curls",
                          description: "get buff bro",
-                         equipment: "dumbbells",
+                         equipment: "Dumbbells",
+                         muscle: biceps)
+
+biceps2 = Exercise.create(name: "Incline Hammer Curls",
+                         description: "get buff bro",
+                         equipment: "Dumbbells",
+                         muscle: biceps)
+
+biceps3 = Exercise.create(name: "Barbell Curl",
+                         description: "get buff bro",
+                         equipment: "Barbell",
+                         muscle: biceps)
+
+biceps4 = Exercise.create(name: "Concentration Curls",
+                         description: "get buff bro",
+                         equipment: "Dumbbells",
+                         muscle: biceps)
+
+biceps5 = Exercise.create(name: "Hammber Curls",
+                         description: "get buff bro",
+                         equipment: "Dumbbells",
+                         muscle: biceps)
+
+biceps6 = Exercise.create(name: "Cross Body Hammber Curls",
+                         description: "get buff bro",
+                         equipment: "Dumbbells",
+                         muscle: biceps)
+
+biceps7 = Exercise.create(name: "Spider Curl",
+                         description: "get buff bro",
+                         equipment: "E-Z Curl Bar",
+                         muscle: biceps)
+
+biceps8 = Exercise.create(name: "EZ Bar Curl",
+                         description: "get buff bro",
+                         equipment: "E-Z Curl Bar",
+                         muscle: biceps)
+
+biceps9 = Exercise.create(name: "Close-grip EZ Bar Curl",
+                         description: "get buff bro",
+                         equipment: "E-Z Curl Bar",
+                         muscle: biceps)
+
+biceps10 = Exercise.create(name: "Preacher Curl",
+                         description: "get buff bro",
+                         equipment: "Barbell",
                          muscle: biceps)
 
 
+# 
 squats1 = Exercise.create(name: "Barbell Squat",
                          description: "get buff bro",
                          equipment: "squat rack",
