@@ -25,5 +25,7 @@
 	</ul>
 <% end %>
 
+<% if @not_signed_up %>
 <%= button_to "Select this Workout Program", workout_programs_path, {action: "create"} %>
+<% end %>
 <%= link_to "Back", workout_programs_path %>
