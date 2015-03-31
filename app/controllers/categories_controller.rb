@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   def index
     @exercises = Exercise.all
     @muscles = Muscle.order(:name)
-    @categories = Muscle.muscle_groups
+    @categories = MuscleGroup.all
     
     if logged_in?
       render :index, layout: false

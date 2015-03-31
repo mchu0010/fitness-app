@@ -1,11 +1,11 @@
 <% @categories.each do |category| %>
- <h2><%= button_to category %></h2>
- <p>Top <%= category.capitalize %> Workouts </p>
- <ul>
- 		<li>
- 		<% @exercises.each do |exercise| %>
-  			<%= exercise.name if exercise.muscle != nil && exercise.muscle.muscle_group == category %>
-  	<% end %>
-  	</li>
-  	</ul
-><% end %>
+ 	<div><h2><%= button_to category.name, "#", class: "muscle-group-btn", action: "get" %></h2></div>
+ <div class="muscle-group-workout-list" style="display: none">
+ 	<p>Top <%= category.name.capitalize %> Workouts </p>
+ 		<ul>
+				<% category.exercises.each do |exercise| %>
+				<li><%= link_to exercise.name, exercise_path(exercise.id) %></li>
+			<% end %>
+  </ul>
+  </div>
+<% end %>
