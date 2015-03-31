@@ -1,22 +1,14 @@
 Exercises Index
 
-<h1> 
 
 
 <%= @muscles.each do |muscle| %>
-  <h2><%= link_to muscle.name %></h2>
+  <h2><%= button_to muscle.name %></h2>
   <p> Top <%= muscle.name.capitalize %> Workouts </p>
     <ul>
       <% muscle.exercises.each do |exercise| %>
-        <li><%= exercise.name %></li>
+        <li><%= link_to exercise.name, exercise_path(exercise.id) %></li>
       <% end %>
     </ul>
 <% end %>
 
-
-<!-- 
-<%# @exercises.each do |exercise| %>
-	<p><%#= link_to exercise.name, exercise_path(exercise.id) %></p>
-<%# end %>
-
- -->
