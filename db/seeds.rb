@@ -1,3 +1,6 @@
+
+# Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
+
 # MUSCLES --------------------------------------------------------
 
 chest = Muscle.create(name: "Chest", muscle_group: "Chest")
@@ -26,8 +29,9 @@ cardio1 = Exercise.create!(name: "Stair Master",
                          description: "get cut bro",
                          equipment: "stair master",
                          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum")
+
+# require_relative ('chest_exercise_seeds')
 # Chest Exercises 
-# image - http://assets.bodybuilding.com/images/trackers/exercise/heatmap/1.gif                        
 chest1 = Exercise.create(name: "Barbell Bench Press",
                         description: "get buff bro",
                         equipment: "Flat Bench & Barbell",
