@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :exercises, only: [:index, :show]
   resources :exercise_activities
 
+  resources :muscles, only: [:index]
+  resources :categories, only: [:index]
+
   get  "/login"  => 'sessions#new'
   post "/login"  => 'sessions#create'
   get  "/logout" => 'sessions#destroy'
