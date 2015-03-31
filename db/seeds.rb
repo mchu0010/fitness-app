@@ -1,25 +1,35 @@
 
 # Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 
+# MUSCLE GROUPS
+
+chest_group = MuscleGroup.create(name: "Chest")
+abs_group = MuscleGroup.create(name: "Abdominals")
+arms_group = MuscleGroup.create(name: "Arms")
+shoulders_group = MuscleGroup.create(name: "Shoulders")
+legs_group = MuscleGroup.create(name: "Legs")
+back_group = MuscleGroup.create(name: "Back")
+
+
 # MUSCLES --------------------------------------------------------
 
-chest = Muscle.create(name: "Chest", muscle_group: "Chest")
-abdominals = Muscle.create(name: "Abdominals", muscle_group: "Abdominals")
+chest = Muscle.create(name: "Chest", muscle_group: chest_group)
+abdominals = Muscle.create(name: "Abdominals", muscle_group: abs_group)
 
-biceps = Muscle.create(name: "Biceps", muscle_group: "Arms")
-triceps = Muscle.create(name: "Triceps", muscle_group: "Arms")
-forearms = Muscle.create(name: "Forearms", muscle_group: "Arms")
+biceps = Muscle.create(name: "Biceps", muscle_group: arms_group)
+triceps = Muscle.create(name: "Triceps", muscle_group: arms_group)
+forearms = Muscle.create(name: "Forearms", muscle_group: arms_group)
 
-shoulders = Muscle.create(name: "Shoulders", muscle_group: "Shoulders")
+shoulders = Muscle.create(name: "Shoulders", muscle_group: shoulders_group)
 
-hamstrings = Muscle.create(name: "Hamstrings", muscle_group: "Legs")
-quadriceps = Muscle.create(name: "Quadriceps", muscle_group: "Legs")
-calves = Muscle.create(name: "Calves", muscle_group: "Legs")
-glutes = Muscle.create(name: "Glutes", muscle_group: "Legs")
+hamstrings = Muscle.create(name: "Hamstrings", muscle_group: legs_group)
+quadriceps = Muscle.create(name: "Quadriceps", muscle_group: legs_group)
+calves = Muscle.create(name: "Calves", muscle_group: legs_group)
+glutes = Muscle.create(name: "Glutes", muscle_group: legs_group)
 
-traps = Muscle.create(name: "Traps", muscle_group: "Back")
-lats = Muscle.create(name: "Lats", muscle_group: "Back")
-back = Muscle.create(name: "Back", muscle_group: "Back") 
+traps = Muscle.create(name: "Traps", muscle_group: back_group)
+lats = Muscle.create(name: "Lats", muscle_group: back_group)
+back = Muscle.create(name: "Back", muscle_group: back_group) 
 
 
 # EXERCISES --------------------------------------------------------
@@ -129,7 +139,7 @@ biceps4 = Exercise.create(name: "Concentration Curls",
                          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
                          image: '..public/images/biceps.png')
 
-biceps5 = Exercise.create(name: "Hammber Curls",
+biceps5 = Exercise.create(name: "Hammer Curls",
                          equipment: "Dumbbells",
                          muscle: biceps,
                          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
