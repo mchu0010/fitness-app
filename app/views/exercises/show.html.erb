@@ -1,7 +1,10 @@
 <h1><%= @exercise.name %></h1>
 
 <div class="exercise-info">
-	<div class="exercise-equipment"> <h3>Equipment: </h3> <%= @exercise.equipment %> </div>
-	<div class="primiary-muscle"><h3>Primary Muscle: </h3> <%= @exercise.muscle.name %></div>
-	<div class="exercise-description"><p><%= @exercise.description %></p></div>
+
+<div class="exercise-equipment"> <h3>Equipment: </h3> <%= @exercise.equipment %> </div>
+<div class="primiary-muscle"><h3>Primary Muscle: </h3> <%= @exercise.muscle.name %></div>
+<div class="exercise-description"><p><%= @exercise.description %></p></div>
+<div class="muscle-image"><img src= <%= @exercise.image %> ></div>
+
 </div>
