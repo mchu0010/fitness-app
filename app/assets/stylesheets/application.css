@@ -79,3 +79,7 @@ body{
   font-family: sans-serif;
 }
 
+/*exercise show page*/
+.exercise-info div * {
+  display: inline-block;
+}
