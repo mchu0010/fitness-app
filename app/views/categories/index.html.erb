@@ -1,1 +1,11 @@
-<h1>test</h1>
+<% @categories.each do |category| %>
+ <h2><%= button_to category %></h2>
+ <p>Top <%= category.capitalize %> Workouts </p>
+ <ul>
+ 		<li>
+ 		<% @exercises.each do |exercise| %>
+  			<%= exercise.name if exercise.muscle != nil && exercise.muscle.muscle_group == category %>
+  	<% end %>
+  	</li>
+  	</ul
+><% end %>
