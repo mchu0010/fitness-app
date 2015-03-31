@@ -1,14 +1,4 @@
-Exercises Index
+<%= link_to "View By Muscles", muscles_path, class: "view-by-muscles-btn", action: "get" %>
+<%= link_to "View By Category", categories_path, class: "view-by-category-btn" %>
 
-
-
-<%= @muscles.each do |muscle| %>
-  <h2><%= button_to muscle.name %></h2>
-  <p> Top <%= muscle.name.capitalize %> Workouts </p>
-    <ul>
-      <% muscle.exercises.each do |exercise| %>
-        <li><%= link_to exercise.name, exercise_path(exercise.id) %></li>
-      <% end %>
-    </ul>
-<% end %>
-
+<div class="exercise-group"></div>
