@@ -3,7 +3,7 @@ class CreateExerciseActivities < ActiveRecord::Migration
     create_table :exercise_activities do |t|
     	t.string :distance
     	t.string :reps
-    	t.string :sets
+    	t.string :weight
 
     	t.references :exercise
     	t.references :exercise_recommendation

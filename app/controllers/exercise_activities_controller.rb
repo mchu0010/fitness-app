@@ -1,8 +1,15 @@
-class ExerciseActivitiesController < ApplicationControllerx
+class ExerciseActivitiesController < ApplicationController
 	def index
 	end
 
 	def new
+		@exercise_activity = ExerciseActivity.new
+
+		if logged_in?
+		  render :new
+		else
+		  redirect_to login_path
+		end
 	end
 
 	def create
@@ -15,6 +22,10 @@ class ExerciseActivitiesController < ApplicationControllerx
 	end
 
 	def delete
+	end
+
+	def activity_params
+		params.require(:exercise_activity).permit(:weight, :reps)
 	end
 	
 end

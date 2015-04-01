@@ -36,7 +36,7 @@
 								<%= link_to "Workout Programs", workout_programs_path %>
 							</li>
 							<li>
-								<%= link_to "Start Daily Exercise", "#" %>
+								<%= link_to "Start Daily Exercise", new_exercise_activity_path %>
 							</li>
 						</ul>
 					</li>
@@ -58,6 +58,10 @@
     <script src="js/bootstrap.min.js"></script>
 		<!-- /.container -->
 	</nav>  
+	
+	<div class="main-container">
 	<%= yield %>
+	</div>
+
 </body>
 </html>
