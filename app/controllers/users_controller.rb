@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def summary
-    @user = current_user
     if logged_in?
       render :summary
     else

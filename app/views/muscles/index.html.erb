@@ -1,9 +1,11 @@
-<%= @muscles.each do |muscle| %>
-  <h2><%= button_to muscle.name %></h2>
+<% @muscles.each do |muscle| %>
+  <div><h2><%= button_to muscle.name, "#", class: "muscle-btn", action: "get" %></h2></div>
+  <div class="muscle-workout-list" style="display: none">
   <p> Top <%= muscle.name.capitalize %> Workouts </p>
     <ul>
       <% muscle.exercises.each do |exercise| %>
         <li><%= link_to exercise.name, exercise_path(exercise.id) %></li>
       <% end %>
     </ul>
+    </div>
 <% end %>
