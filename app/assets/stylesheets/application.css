@@ -18,66 +18,6 @@ body{
     margin:0px;
 }
 
-.header {
-    height:75px;
-    background-color: #2a2a2a;
-    border:1px solid #CCC;
-    margin:0px auto;
-}
-
-.header > * {
-  display: inline-block;
-  color: white;
-}
-
-.header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.header ul li {
-  float: right;
-  margin-left: 5px;
-}
-
-.header * a {
-  color: white;
-  text-decoration: none;
-}
-
-#site-title {
-  margin-left: 10%;
-  font-family: 'Cantarell', sans-serif;
-  color: white;
-}
-
-#site-banner {
-  position: relative;
-}
-
-#banner-content {
-  position: absolute;
-  top: 130px;
-  left: 10%;
-}
-
-.breakline-red {
-  display: block;
-  font-family: sans-serif;
-}
-
-.breakline {
-  color: red;
-  font-size: 100px;
-  font-family: sans-serif;
-}
-
-.breakline-subtitle {
-  font-size: 25px;
-  font-family: sans-serif;
-}
 
 /*exercise show page*/
 .exercise-info div * {
