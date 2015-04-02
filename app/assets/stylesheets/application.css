@@ -24,7 +24,7 @@ body{
 }
 
 .main-container {
-  overflow: auto;
+  overflow: visible;
   margin: 5px auto;
   width: 80%;
   padding: 0px 20px 20px 20px;
