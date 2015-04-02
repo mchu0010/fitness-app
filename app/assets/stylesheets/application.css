@@ -23,6 +23,29 @@ body{
   display: inline-block;
 }
 
+.button-menu {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 20px 20px 20px;
+}
+
+.browse-exercise-btn {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.muscle-category-items {
+	max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px; 
+}
+
+.muscle-btn img {
+	height: 50px;
+}
 .main-container {
   overflow: auto;
   margin: 5px auto;
