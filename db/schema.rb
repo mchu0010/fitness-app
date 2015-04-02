@@ -83,9 +83,11 @@ ActiveRecord::Schema.define(version: 20150331215914) do
 
   create_table "muscles", force: :cascade do |t|
     t.string   "name"
+    t.string   "muscle_image"
+    t.string   "muscle_thumbnail"
     t.integer  "muscle_group_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "relationships", force: :cascade do |t|
