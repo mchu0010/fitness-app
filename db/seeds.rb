@@ -4,94 +4,94 @@
 # MUSCLE GROUPS
 
 chest_group = MuscleGroup.create(name: "Chest")
-abs_group = MuscleGroup.create(name: "Abdominals")
+abs_group = MuscleGroup.create(name: "Core")
 arms_group = MuscleGroup.create(name: "Arms")
 shoulders_group = MuscleGroup.create(name: "Shoulders")
-legs_group = MuscleGroup.create(name: "Legs")
+legs_group = MuscleGroup.create(name: "Lower Body")
 back_group = MuscleGroup.create(name: "Back")
 
 
 # MUSCLES --------------------------------------------------------
 
-chest = Muscle.create(name: "Chest", muscle_group: chest_group)
-abdominals = Muscle.create(name: "Abdominals", muscle_group: abs_group)
+chest = Muscle.create(name: "Chest", muscle_group: chest_group, muscle_image: "chest.png", muscle_thumbnail: "chest_thumb.png" )
+abdominals = Muscle.create(name: "Abdominals", muscle_group: abs_group, muscle_image: "abdominals.png", muscle_thumbnail: "abdominals_thumb.png" )
 
-biceps = Muscle.create(name: "Biceps", muscle_group: arms_group)
-triceps = Muscle.create(name: "Triceps", muscle_group: arms_group)
-forearms = Muscle.create(name: "Forearms", muscle_group: arms_group)
+biceps = Muscle.create(name: "Biceps", muscle_group: arms_group, muscle_image: "biceps.png", muscle_thumbnail: "biceps_thumb.png" )
+triceps = Muscle.create(name: "Triceps", muscle_group: arms_group, muscle_image: "triceps.png", muscle_thumbnail: "triceps_thumb.png")
+forearms = Muscle.create(name: "Forearms", muscle_group: arms_group, muscle_image: "forearms.png", muscle_thumbnail: "forearms_thumb.png")
 
-shoulders = Muscle.create(name: "Shoulders", muscle_group: shoulders_group)
+shoulders = Muscle.create(name: "Shoulders", muscle_group: shoulders_group, muscle_image: "shoulders.png", muscle_thumbnail: "shoulders_thumb.png")
 
-hamstrings = Muscle.create(name: "Hamstrings", muscle_group: legs_group)
-quadriceps = Muscle.create(name: "Quadriceps", muscle_group: legs_group)
-calves = Muscle.create(name: "Calves", muscle_group: legs_group)
-glutes = Muscle.create(name: "Glutes", muscle_group: legs_group)
+hamstrings = Muscle.create(name: "Hamstrings", muscle_group: legs_group, muscle_image: "hamstrings.png", muscle_thumbnail: "hamstrings_thumb.png" )
+quadriceps = Muscle.create(name: "Quadriceps", muscle_group: legs_group, muscle_image: "quadriceps.png", muscle_thumbnail: "quadriceps_thumb.png")
+calves = Muscle.create(name: "Calves", muscle_group: legs_group, muscle_image: "calves.png", muscle_thumbnail: "calves_thumb.png")
+glutes = Muscle.create(name: "Glutes", muscle_group: legs_group, muscle_image: "glutes.png", muscle_thumbnail: "glutes_thumb.png" )
 
-traps = Muscle.create(name: "Traps", muscle_group: back_group)
-lats = Muscle.create(name: "Lats", muscle_group: back_group)
-lowerback = Muscle.create(name: "Lower Back", muscle_group: back_group) 
-midback = Muscle.create(name: "Mid Back", muscle_group: back_group)
+traps = Muscle.create(name: "Traps", muscle_group: back_group, muscle_image: "traps.png", muscle_thumbnail: "traps_thumb.png")
+lats = Muscle.create(name: "Lats", muscle_group: back_group, muscle_image: "lats.png", muscle_thumbnail: "lats_thumb.png")
+lowerback = Muscle.create(name: "Lower Back", muscle_group: back_group, muscle_image: "lowerback.png", muscle_thumbnail: "lowerback_thumb.png") 
+midback = Muscle.create(name: "Mid Back", muscle_group: back_group, muscle_image: "midback.png", muscle_thumbnail: "midback_thumb.png")
 
 # EXERCISES --------------------------------------------------------
 
 # Cardio
 cardio1 = Exercise.create!(name: "Stair Master",
                          equipment: "Body Only",
-                         description: "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder. Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised.")
-                                
+                         description: "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder. Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised.",
+                         muscle: quadriceps)       
 # Abdominals
 abs1 = Exercise.create(name: "Plank",
                        equipment: "Body Only",
                        description: "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder. Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised.",
-                       image: "abdominals.pngabdominals.png",
+              
                        muscle: abdominals)
 
 abs2 = Exercise.create(name: "Cross-Body Crunch",
                        equipment: "Body Only",
                        description: "Lie flat on your back and bend your knees about 60 degrees. Keep your feet flat on the floor and place your hands loosely behind your head. This will be your starting position. Now curl up and bring your right elbow and shoulder across your body while bring your left knee in toward your left shoulder at the same time. Reach with your elbow and try to touch your knee. Exhale as you perform this movement. Tip: Try to bring your shoulder up towards your knee rather than just your elbow and remember that the key is to contract the abs as you perform the movement; not just to move the elbow. Now go back down to the starting position as you inhale and repeat with the left elbow and the right knee. Continue alternating in this manner until all prescribed repetitions are done.",
-                       image: "abdominals.png",
+                   
                        muscle: abdominals)
 
 abs3 = Exercise.create(name: "Bottoms Up",
                        equipment: "Body Only",
                        description: "Begin by lying on your back on the ground. Your legs should be straight and your arms at your side. This will be your starting position. To perform the movement, tuck the knees toward your chest by flexing the hips and knees. Following this, extend your legs directly above you so that they are perpendicular to the ground. Rotate and elevate your pelvis to raise your glutes from the floor. After a brief pause, return to the starting position.",
-                       image: 'abdominals.png',
+                  
                        muscle: abdominals)
 
 abs4 = Exercise.create(name: "Hanging Pike",
                        equipment: "Other",
                        description: "",
-                       image: "abdominals.png",
+              
                        muscle: abdominals)
 
 abs5 = Exercise.create(name: "Plate Twist",
                        equipment: "Other",
                        description: "Lie down on the floor or an exercise mat with your legs fully extended and your upper body upright. Grab the plate by its sides with both hands out in front of your abdominals with your arms slightly bent. Slowly cross your legs near your ankles and lift them up off the ground. Your knees should also be bent slightly. Note: Move your upper body back slightly to help keep you balanced turning this exercise. This is the starting position. Move the plate to the left side and touch the floor with it. Breathe out as you perform that movement. Come back to the starting position as you breathe in and then repeat the movement but this time to the right side of the body. Tip: Use a slow controlled movement at all times. Jerking motions can injure the back. Repeat for the recommended amount of repetitions.",
-                       image: "abdominals.png",
+                  
                        muscle: abdominals)
 
 abs6 = Exercise.create(name: "3/4 Sit-Up",
                        equipment: "Body Only",
                        description: "Lie down on the floor and secure your feet. Your legs should be bent at the knees. Place your hands behind or to the side of your head. You will begin with your back on the ground. This will be your starting position. Flex your hips and spine to raise your torso toward your knees. At the top of the contraction your torso should be perpendicular to the ground. Reverse the motion, going only ¾ of the way down.",
-                       image: "abdominals.png",
+                   
                        muscle: abdominals)
 
 abs7 = Exercise.create(name: "Air Bike",
                        equipment: "Body Only",
                        description: "Lie flat on the floor with your lower back pressed to the ground. For this exercise, you will need to put your hands beside your head. Be careful however to not strain with the neck as you perform it. Now lift your shoulders into the crunch position. Bring knees up to where they are perpendicular to the floor, with your lower legs parallel to the floor. This will be your starting position. Now simultaneously, slowly go through a cycle pedal motion kicking forward with the right leg and bringing in the knee of the left leg. Bring your right elbow close to your left knee by crunching to the side, as you breathe out. Go back to the initial position as you breathe in. Crunch to the opposite side as you cycle your legs and bring closer your left elbow to your right knee and exhale.",
-                       image: "abdominals.png",
+                    
                        muscle: abdominals)
 
 abs8 = Exercise.create(name: "Crunches",
                        equipment: "Body Only",
                        description: "Lie flat on your back with your feet flat on the ground, or resting on a bench with your knees bent at a 90 degree angle. If you are resting your feet on a bench, place them three to four inches apart and point your toes inward so they touch. Now place your hands lightly on either side of your head keeping your elbows in. Tip: Don't lock your fingers behind your head. While pushing the small of your back down in the floor to better isolate your abdominal muscles, begin to roll your shoulders off the floor. Continue to push down as hard as you can with your lower back as you contract your abdominals and exhale. Your shoulders should come up off the floor only about four inches, and your lower back should remain on the floor. At the top of the movement, contract your abdominals hard and keep the contraction for a second. Tip: Focus on slow, controlled movement - don't cheat yourself by using momentum. After the one second contraction, begin to come down slowly again to the starting position as you inhale.",
-                       image: "abdominals.png",
+                     
                        muscle: abdominals)
 
 abs9 = Exercise.create(name: "Rope Crunch",
                        equipment: "Body Only",
                        description: "1. Kneel 1-2 feet in front of a cable system with a rope attached.  After selecting an appropriate weight, grasp the rope with both hands reaching overhead. Your torso should be upright in the starting position. To begin, flex at the spine, attempting to bring your rib cage to your legs as you pull the cable down. Pause at the bottom of the motion, and then slowly return to the starting position. These can be done with twists or to the side to hit the obliques.",
-                       image: "abdominals.png",
+                 
                        muscle: abdominals)
 
 # Bicep Exercises
