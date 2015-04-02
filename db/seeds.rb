@@ -128,7 +128,7 @@ biceps5 = Exercise.create(name: "Hammer Curls",
 biceps6 = Exercise.create(name: "Cross Body Hammber Curls",
                          equipment: "Dumbbells",
                          muscle: biceps,
-                         description: "Stand up straight with a dumbbell in each hand. Your hands should be down at your side with your palms facing in. While keeping your palms facing in and without twisting your arm, curl the dumbbell of the right arm up towards your left shoulder as you exhale. Touch the top of the dumbbell to your shoulder and hold the contraction for a second. Slowly lower the dumbbell along the same path as you inhale and then repeat the same movement for the left arm. Continue alternating in this fashion until the recommended amount of repetitions is performed for each arm.",
+                         description: "Stand up straight with a dumbbell in each hand. Your hands should be down at your side with your palms facing in. While keeping your palms facing in and without twisting your arm, curl the dumbbell of the right arm up towards your left shoulder as you exhsale. Touch the top of the dumbbell to your shoulder and hold the contraction for a second. Slowly lower the dumbbell along the same path as you inhale and then repeat the same movement for the left arm. Continue alternating in this fashion until the recommended amount of repetitions is performed for each arm.",
                          image: 'biceps.png')
 
 biceps7 = Exercise.create(name: "Spider Curl",
@@ -827,10 +827,10 @@ brian = User.create!(first_name: "Brian",
 workout_session1 = WorkoutSession.create(participant: brian)
 
 
-brian_act1 = ExerciseActivity.create(workout_session: workout_session1, exercise: chest1, sets: 5, reps: 10)
-brian_act2=  ExerciseActivity.create(workout_session: workout_session1, exercise: biceps1, sets: 5, reps: 10)
-brian_act3 = ExerciseActivity.create(workout_session: workout_session1, exercise: quads1, sets: 5, reps: 10)
-brian_act4 = ExerciseActivity.create(workout_session: workout_session1, exercise: shoulders1, sets: 5, reps: 10)
+brian_act1 = ExerciseActivity.create(workout_session: workout_session1, exercise: chest1, weight: 5, reps: 10)
+brian_act2=  ExerciseActivity.create(workout_session: workout_session1, exercise: biceps1, weight: 5, reps: 10)
+brian_act3 = ExerciseActivity.create(workout_session: workout_session1, exercise: quads1, weight: 5, reps: 10)
+brian_act4 = ExerciseActivity.create(workout_session: workout_session1, exercise: shoulders1, weight: 5, reps: 10)
 
 
 # #------------------------------------------------------------------------------------------------------------------------
@@ -851,13 +851,13 @@ aarons_workout_program = UserWorkoutProgram.create!(user: aaron, workout_program
 week1_monday = DailyWorkout.create(week: 1, day: "Monday", workout_program: t70x)
 
 workoutplan1 = ExerciseRecommendation.create(distance: 1, exercise: cardio1, daily_workout: week1_monday)
-workoutplan1 = ExerciseRecommendation.create(sets: 5, reps: 10, rest: 2, exercise: chest1, daily_workout: week1_monday)
-workoutplan1 = ExerciseRecommendation.create(sets: 5, reps: 10, rest: 2, exercise: biceps1, daily_workout: week1_monday)
-workoutplan1 = ExerciseRecommendation.create(sets: 5, reps: 10, rest: 2, exercise: quads1, daily_workout: week1_monday)
-workoutplan1 = ExerciseRecommendation.create(sets: 5, reps: 10, rest: 2, exercise: shoulders1, daily_workout: week1_monday)
+workoutplan1 = ExerciseRecommendation.create(sets: 5, weight: 5, reps: 10, rest: 2, exercise: chest1, daily_workout: week1_monday)
+workoutplan1 = ExerciseRecommendation.create(sets: 5, weight: 5, reps: 10, rest: 2, exercise: biceps1, daily_workout: week1_monday)
+workoutplan1 = ExerciseRecommendation.create(sets: 5, weight: 5, reps: 10, rest: 2, exercise: quads1, daily_workout: week1_monday)
+workoutplan1 = ExerciseRecommendation.create(sets: 5, weight: 5, reps: 10, rest: 2, exercise: shoulders1, daily_workout: week1_monday)
 
-aaron_act1 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: cardio1, distance: 1, sets: 5, reps: 10)
-aaron_act2 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: chest1, sets: 5, reps: 10)
-aaron_act3 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: biceps1, sets: 5, reps: 10)
-aaron_act4 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: quads1, sets: 5, reps: 10)
-aaron_act5 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: shoulders1, sets: 5, reps: 10)
+aaron_act1 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: cardio1, distance: 1, weight: 5, reps: 10)
+aaron_act2 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: chest1, weight: 5, reps: 10)
+aaron_act3 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: biceps1, weight: 5, reps: 10)
+aaron_act4 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: quads1, weight: 5, reps: 10)
+aaron_act5 = ExerciseActivity.create(workout_session: workout_session2, exercise_recommendation: workoutplan1, exercise: shoulders1, weight: 5, reps: 10)

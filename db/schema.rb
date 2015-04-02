@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150331215914) do
     t.string   "reps"
     t.string   "sets"
     t.string   "rest"
+    t.string   "weight"
     t.integer  "exercise_id"
     t.integer  "daily_workout_id"
     t.datetime "created_at",       null: false
