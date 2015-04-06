@@ -1,4 +1,4 @@
-<%= button_to "New Workout Session", workout_sessions_path, method: "get" %>
+<%= button_to "New Workout Session", workout_sessions_path, method: "post" %>
 
 <% if current_user.workout_programs.count >= 1 %>
 <%= button_to "Continue Workout Program", workout_programs_path, :method => "get" %>
