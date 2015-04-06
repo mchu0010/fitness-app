@@ -3,33 +3,28 @@
     <div class="col-md-2">
       <ul class="nav nav-pills nav-stacked admin-menu">
         <li class="active"><a href="#" data-target-id="home">Home</a></li>
-        <li><a href=<%##= new_question_path %> >Ask a Question</a></li>
-        <li><a href=<%##=  questions_path %> > Browse Questions</a></li>
-        <li><a href="#"> Trending</a></li>
-        <li><a href="#"> Tags</a></li>
-        <li><a href="#"> Responses</a></li>
-        <li><a href="#"> Settings</a></li>
+        <li><%= link_to "Workout Session", "#" %></li>
+        <li><%= link_to "Workout Progress", "#" %></li>
+        <li><%= link_to "Settings", "#" %></li>
+        <li><%= link_to "Most Used Exercises...", "#" %></li>
       </ul>
     </div>
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-8 well admin-content" id="home">
-          <h3 class="page-header"><%##= current_user.first_name.capitalize%></h3>
+          <h3 class="page-header"><%= current_user.first_name.capitalize%></h3>
           <div class="row">
             <div class="col-xs-6">
-              <img src=<%#= current_user.avatar_url %> class="img-thumbnail" width="304" height="236">
+              <img src=<%= current_user.image_url %> class="img-thumbnail" width="304" height="236">
             </div>
             <div class="col-xs-6">
               <table class="center">
                 <tbody>
                   <tr>
-                    <td> <%#= current_user.first_name.capitalize %> <%#= current_user.last_name.capitalize %> </td>
+                    <td> <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %> </td>
                   </tr>
                   <tr>
-                    <td> Member for: <%#= member_for %> </td>
-                  </tr>
-                  <tr>
-                    <td>Email: <%#= current_user.email %></td>
+                    <td>Email: <%= current_user.email %></td>
                   </tr>
                 </tbody>
               </table>
