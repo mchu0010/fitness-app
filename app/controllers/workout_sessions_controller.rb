@@ -17,8 +17,15 @@ class WorkoutSessionsController < ApplicationController
     end
   end
 
+  def create
+    @workout_session = WorkoutSession.create
+
+    redirect_to workout_session_path(@workout_session.id)
+  end
+
   def show
     @workout_session = WorkoutSession.find(params[:id])
+    session[:workout_session_id] = @workout_session.id
 
     # need to figure out how to display activities with the same exercise as multiple sets rather than their own activity
     @exercise_activities = @workout_session.exercise_activities.order(:id)

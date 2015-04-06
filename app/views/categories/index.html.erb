@@ -7,6 +7,9 @@
  		<ul>
 				<% category.exercises.each do |exercise| %>
 				<li><%= link_to exercise.name, exercise_path(exercise.id) %></li>
+				 <% if session[:workout_session_id] %>
+					<%= button_to "Add to Workout", "#", class: "add-to-workout-btn", id: exercise.id %>
+        <% end %>
 			<% end %>
   </ul>
   </div>
