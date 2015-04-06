@@ -1,5 +1,6 @@
 <div class="exercise-activity-form">
-	
+	<h4><%= activity.exercise.name %></h4>
+
 	<%= form_for activity do |f| %>
 		<p><%= f.label :weight %></p>
 		<p><%= f.text_field :weight %></p>
