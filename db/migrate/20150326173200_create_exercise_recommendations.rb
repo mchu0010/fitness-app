@@ -5,6 +5,7 @@ class CreateExerciseRecommendations < ActiveRecord::Migration
     	t.string :reps
     	t.string :sets
     	t.string :rest
+      t.string :weight
 
     	t.references :exercise
     	t.references :daily_workout

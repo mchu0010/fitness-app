@@ -11,7 +11,7 @@ $(document).ready(function() {
 		});
 
 		request.done(function(response) {
-			$(".exercise-group").empty();
+			$(".exercise-group").toggle();
 			$(".exercise-group").html(response);
 		});	
 	})
@@ -19,18 +19,12 @@ $(document).ready(function() {
 	$(document).on("click", ".muscle-btn", function(e){
 		e.preventDefault();
 
-		console.log($(e.target).closest("div").next())
-		console.log($(e.target))
-
 		$(e.target).closest("div").next().toggle();
 
 	});
 
 	$(document).on("click", ".muscle-group-btn", function(e){
 		e.preventDefault();
-
-		console.log($(e.target).closest("div").next())
-		console.log($(e.target))
 
 		$(e.target).closest("div").next().toggle();
 

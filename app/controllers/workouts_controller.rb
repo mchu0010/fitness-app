@@ -13,10 +13,9 @@ class WorkoutsController < ApplicationController
   def create
     @current_workout = WorkoutSession.create!({participant_id: current_user.id})
     redirect_to workout_session_path(@current_workout.id)
-
   end
 
   def show
-    
+
   end
 end

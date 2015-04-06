@@ -1,1 +1,23 @@
-Your new workout
+this view will have a single completed workout session -- maybe linked to in summary
+
+<!-- probably need to add some sort of logic so that this doesn't show up on old activities or use a framework to only render them on current activity -->
+<div class="button-menu">
+	<%= link_to "View By Muscles", muscles_path, class: "browse-exercise-btn btn-lg btn-primary btn-block" %>
+	<%= link_to "View By Category", categories_path, class: "browse-exercise-btn btn-lg btn-primary btn-block" %>
+</div>
+    
+
+<div class="exercise-group" style="display: none"></div>
+
+<div>
+	<h1>Current Exercises</h1>
+
+	<% @exercise_activities.each do |activity| %>
+		<h4><%= activity.exercise.name %></h4>
+
+		<%= render partial: "/exercise_activities/form", locals: { activity: activity }  %>
+	<% end %>
+
+	<!-- works to update exisiting activities, need to find a way when complete set is clicked to create a  -->
+
+</div>
