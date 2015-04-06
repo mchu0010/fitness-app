@@ -18,6 +18,14 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def show
+    @workout_session = WorkoutSession.find(params[:id])
+
+    # need to figure out how to display activities with the same exercise as multiple sets rather than their own activity
+    @exercise_activities = @workout_session.exercise_activities.order(:id)
+  end
+
+  def update
+
   end
 
 end

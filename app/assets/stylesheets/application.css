@@ -86,6 +86,7 @@ body{
 	display: inline-block;
 	width: 30%
 }
+
 .button-menu {
   max-width: 960px;
   margin-left: auto;
@@ -109,3 +110,9 @@ body{
 .muscle-btn img {
 	height: 50px;
 }
+
+
+.exercise-activity-form {
+  border-bottom: 1px solid black;
+}
+

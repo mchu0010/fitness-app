@@ -1,0 +1,12 @@
+<div class="exercise-activity-form">
+	
+	<%= form_for activity do |f| %>
+		<p><%= f.label :weight %></p>
+		<p><%= f.text_field :weight %></p>
+
+		<p><%= f.label :reps %></p>
+		<p><%= f.text_field :reps %></p>
+
+		<p><%= f.submit "Complete Set" %></p>		
+	<% end %>
+</div>

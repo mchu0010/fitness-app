@@ -16,6 +16,6 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    
+
   end
 end

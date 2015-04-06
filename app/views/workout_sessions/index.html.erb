@@ -1,3 +1,18 @@
-List all of the current exercise activties
+<!-- List all of the current exercise activties
 
-render the exercise activity _show partial
+render the exercise activity _show partial -->
+
+
+<div class="button-menu">
+	<%= link_to "View By Muscles", muscles_path, class: "browse-exercise-btn btn-lg btn-primary btn-block" %>
+	<%= link_to "View By Category", categories_path, class: "browse-exercise-btn btn-lg btn-primary btn-block" %>
+</div>
+    
+
+<div class="exercise-group" style="display: none"></div>
+
+<div>
+	<h1>Current Exercises</h1>
+
+	<%= render partial: "/exercise_activities/new" %>
+</div>
