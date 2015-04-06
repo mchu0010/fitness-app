@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.password == session_params[:password]
       session[:user_id] = user.id
       flash[:notice] = "Signed in as #{user.email}."
-      redirect_to workouts_path
+      # redirect_to workouts_path
+      redirect_to summary_path      
     else
       @email = session_params[:email]
       flash[:alert] = "Email/password combination not valid."
