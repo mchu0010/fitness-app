@@ -5,6 +5,7 @@
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<!-- Navigation -->
@@ -36,7 +37,7 @@
 								<%= link_to "Workout Programs", workout_programs_path %>
 							</li>
 							<li>
-								<%= link_to "New Workout Session", workout_sessions_path, method: "post" %>
+								<%= link_to "Start Daily Exercise", "#" %>
 							</li>
 						</ul>
 					</li>
@@ -51,17 +52,7 @@
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
-		 <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-		<!-- /.container -->
 	</nav>  
-	
-	<!-- <div class="main-container"> -->
 	<%= yield %>
-	<!-- </div> -->
-
 </body>
 </html>
